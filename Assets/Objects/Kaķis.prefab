@@ -234,6 +234,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3333108650602283966, guid: 5c79df5fce9a324409c932813ce121ba, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4345011216472590994}
+    - targetCorrespondingSourceObject: {fileID: 3333108650602283966, guid: 5c79df5fce9a324409c932813ce121ba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6354014646993889130}
   m_SourcePrefab: {fileID: 100100000, guid: 5c79df5fce9a324409c932813ce121ba, type: 3}
 --- !u!1 &7454117655973893210 stripped
 GameObject:
@@ -268,6 +271,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -289,6 +294,7 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -300,10 +306,10 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7454117655973893210}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -364,6 +370,24 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.3234355
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6354014646993889130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7454117655973893210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 0
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!4 &7798413965968199392 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2669020517005924612, guid: 5c79df5fce9a324409c932813ce121ba, type: 3}

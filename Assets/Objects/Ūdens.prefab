@@ -216,6 +216,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2469199872845371530, guid: fc1c927ff4fe709428407f0e29a092f7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2724824850703932475}
+    - targetCorrespondingSourceObject: {fileID: 2469199872845371530, guid: fc1c927ff4fe709428407f0e29a092f7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6287350235086173589}
   m_SourcePrefab: {fileID: 100100000, guid: fc1c927ff4fe709428407f0e29a092f7, type: 3}
 --- !u!4 &2298099803208094631 stripped
 Transform:
@@ -278,6 +281,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -299,10 +304,29 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6287350235086173589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3611557086611901256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 0
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!54 &4607176383855082881 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 3437780026319138371, guid: fc1c927ff4fe709428407f0e29a092f7, type: 3}
