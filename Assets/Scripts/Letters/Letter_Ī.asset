@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: "Letter_\u012A"
   m_EditorClassIdentifier: 
   letter: "\u012A"
+  letterSprite: {fileID: 21300000, guid: 945c6315b68bbbe44a04d0f745a245d8, type: 3}
   correctObject: {fileID: 2078116615608819801, guid: a4cfc9ae488159f49bb166c6f9bbdeee, type: 3}
   wrongObjects:
   - {fileID: 2078116615608819801, guid: b751f3c06c94481459d4e7cb4bf196b2, type: 3}

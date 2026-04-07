@@ -1,12 +1,20 @@
-using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LetterDisplay : MonoBehaviour
 {
-    public TextMeshProUGUI text;
+    public Image image;
 
-    public void ShowLetter(string letter)
+    public void ShowLetter(LetterData data)
     {
-        text.text = letter;
+        image.sprite = data.letterSprite;
+        image.enabled = true;
+        image.type = Image.Type.Simple;
+        image.preserveAspect = false;
+    }
+
+    public void ShowFinished()
+    {
+        image.enabled = false;
     }
 }

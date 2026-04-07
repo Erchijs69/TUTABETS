@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Letter_V
   m_EditorClassIdentifier: 
   letter: V
+  letterSprite: {fileID: 21300000, guid: 4242747806bd6af4e813d97a4c1ee6e7, type: 3}
   correctObject: {fileID: 2078116615608819801, guid: e900874a98b11884f85f57e6f02d4d5a, type: 3}
   wrongObjects:
   - {fileID: 2078116615608819801, guid: b751f3c06c94481459d4e7cb4bf196b2, type: 3}

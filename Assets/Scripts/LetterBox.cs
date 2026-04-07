@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class LetterBox : MonoBehaviour
 {
-    string correctObject;
-
+    private string correctObject;
     public GameManager gameManager;
 
     public void SetCorrectObject(string name)
