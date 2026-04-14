@@ -975,6 +975,7 @@ GameObject:
   - component: {fileID: 170805323}
   - component: {fileID: 170805328}
   - component: {fileID: 170805327}
+  - component: {fileID: 170805329}
   m_Layer: 0
   m_Name: GrabTest
   m_TagString: Untagged
@@ -1123,6 +1124,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &170805329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170805322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d9b715b0c34e4c44886157db3a796bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: GrabTest
 --- !u!1 &178374731
 GameObject:
   m_ObjectHideFlags: 0
@@ -8786,8 +8800,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.4383106, y: 1.2728142, z: 1.7982019}
-  m_Center: {x: -0.0009858159, y: 0.023642275, z: 0.008776048}
+  m_Size: {x: 1.0021102, y: 0.9941409, z: 1.0085275}
+  m_Center: {x: 0.0022085418, y: -0.13735303, z: 0.0028698419}
 --- !u!23 &1644379238
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11113,7 +11127,6 @@ MonoBehaviour:
   spawner: {fileID: 2128710305}
   letterBox: {fileID: 1644379236}
   display: {fileID: 518529933}
-  nextRoundDelay: 1.5
 --- !u!4 &1893104671
 Transform:
   m_ObjectHideFlags: 0

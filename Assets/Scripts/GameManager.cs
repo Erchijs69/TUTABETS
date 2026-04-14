@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour
     public ObjectSpawner spawner;
     public LetterBox letterBox;
     public LetterDisplay display;
-    public float nextRoundDelay = 1.5f;
 
     private int currentIndex = 0;
     private bool roundFinished = false;
@@ -14,13 +13,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        if (letters == null || letters.Length == 0)
-        {
-            Debug.LogError("Letters array is empty!");
-            return;
-        }
-
-        currentIndex = 0;
         StartRound();
     }
 
@@ -51,16 +43,16 @@ public class GameManager : MonoBehaviour
         if (roundFinished) return;
 
         roundFinished = true;
-        Debug.Log("Correct! " + currentLetter.letter);
+        Debug.Log("Correct!");
 
         currentIndex++;
-        Invoke(nameof(StartRound), nextRoundDelay);
+        Invoke(nameof(StartRound), 0.5f);
     }
 
     public void WrongAnswer()
     {
         if (roundFinished) return;
 
-        Debug.Log("Wrong! " + currentLetter.letter);
+        Debug.Log("Wrong!");
     }
 }
