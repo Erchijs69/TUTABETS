@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9b715b0c34e4c44886157db3a796bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: Flamingo
+  itemId: F
 --- !u!1 &3537004498378332093
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,6 +231,18 @@ PrefabInstance:
       value: Flamingo
       objectReference: {fileID: 0}
     - target: {fileID: 2991733740670113455, guid: 903d66bf90bc31a4d93fd2e4bcae3711, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2991733740670113455, guid: 903d66bf90bc31a4d93fd2e4bcae3711, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2991733740670113455, guid: 903d66bf90bc31a4d93fd2e4bcae3711, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2991733740670113455, guid: 903d66bf90bc31a4d93fd2e4bcae3711, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -293,7 +305,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 286344477248035954}
-  m_Mesh: {fileID: 8119782250114211200, guid: b0e6fa7c03ae2294ca3d935c98c1d40c, type: 3}
+  m_Mesh: {fileID: 0}
 --- !u!23 &4122025161075066711
 MeshRenderer:
   m_ObjectHideFlags: 0

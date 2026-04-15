@@ -5,34 +5,60 @@ public class ObjectSpawner : MonoBehaviour
 {
     public Transform[] spawnPoints;
 
-    private List<GameObject> spawnedObjects = new List<GameObject>();
+    private readonly List<GameObject> spawnedObjects = new List<GameObject>();
 
-    public void SpawnObjects(GameObject correct, GameObject[] wrong)
+    public void SpawnObjects(GameObject correctObject, LetterData[] allLetters)
     {
         ClearObjects();
 
-        if (spawnPoints.Length < 3)
+        if (spawnPoints == null || spawnPoints.Length < 3)
         {
-            Debug.LogError("Need at least 3 spawn points.");
+            Debug.LogError("Нужно минимум 3 spawn points.");
             return;
         }
 
-        if (wrong == null || wrong.Length < 2)
+        if (correctObject == null)
         {
-            Debug.LogError("Each letter needs at least 2 wrong objects.");
+            Debug.LogError("Correct object is null.");
             return;
         }
 
-        GameObject[] objects = new GameObject[3];
-        objects[0] = correct;
-        objects[1] = wrong[0];
-        objects[2] = wrong[1];
+        List<GameObject> wrongPool = new List<GameObject>();
 
-        Shuffle(objects);
+        for (int i = 0; i < allLetters.Length; i++)
+        {
+            if (allLetters[i] == null) continue;
+            if (allLetters[i].correctObject == null) continue;
+
+            if (allLetters[i].correctObject != correctObject)
+            {
+                wrongPool.Add(allLetters[i].correctObject);
+            }
+        }
+
+        if (wrongPool.Count < 2)
+        {
+            Debug.LogError("Недостаточно объектов для выбора неправильных ответов.");
+            return;
+        }
+
+        Shuffle(wrongPool);
+
+        GameObject[] objectsToSpawn = new GameObject[3];
+        objectsToSpawn[0] = correctObject;
+        objectsToSpawn[1] = wrongPool[0];
+        objectsToSpawn[2] = wrongPool[1];
+
+        Shuffle(objectsToSpawn);
 
         for (int i = 0; i < 3; i++)
         {
-            GameObject obj = Instantiate(objects[i], spawnPoints[i].position, spawnPoints[i].rotation);
+            GameObject obj = Instantiate(
+                objectsToSpawn[i],
+                spawnPoints[i].position,
+                spawnPoints[i].rotation
+            );
+
             spawnedObjects.Add(obj);
         }
     }
@@ -48,14 +74,14 @@ public class ObjectSpawner : MonoBehaviour
         spawnedObjects.Clear();
     }
 
-    void Shuffle(GameObject[] array)
+    private void Shuffle<T>(IList<T> list)
     {
-        for (int i = 0; i < array.Length; i++)
+        for (int i = 0; i < list.Count; i++)
         {
-            GameObject temp = array[i];
-            int randomIndex = Random.Range(i, array.Length);
-            array[i] = array[randomIndex];
-            array[randomIndex] = temp;
+            int randomIndex = Random.Range(i, list.Count);
+            T temp = list[i];
+            list[i] = list[randomIndex];
+            list[randomIndex] = temp;
         }
     }
 }

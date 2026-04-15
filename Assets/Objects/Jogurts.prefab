@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9b715b0c34e4c44886157db3a796bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: Jogurts
+  itemId: J
 --- !u!1 &4500051280171882121
 GameObject:
   m_ObjectHideFlags: 0

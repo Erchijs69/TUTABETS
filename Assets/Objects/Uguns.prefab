@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9b715b0c34e4c44886157db3a796bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: Uguns
+  itemId: U
 --- !u!65 &9026881012376571452
 BoxCollider:
   m_ObjectHideFlags: 0

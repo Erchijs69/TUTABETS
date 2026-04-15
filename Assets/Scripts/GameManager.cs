@@ -7,12 +7,21 @@ public class GameManager : MonoBehaviour
     public LetterBox letterBox;
     public LetterDisplay display;
 
+    public float nextRoundDelay = 0.7f;
+
     private int currentIndex = 0;
     private bool roundFinished = false;
     private LetterData currentLetter;
 
     void Start()
     {
+        if (letters == null || letters.Length == 0)
+        {
+            Debug.LogError("Массив letters пустой.");
+            return;
+        }
+
+        currentIndex = 0;
         StartRound();
     }
 
@@ -20,8 +29,9 @@ public class GameManager : MonoBehaviour
     {
         if (currentIndex >= letters.Length)
         {
-            Debug.Log("All letters completed!");
+            Debug.Log("Все буквы закончились.");
             display.ShowFinished();
+            spawner.ClearObjects();
             return;
         }
 
@@ -32,10 +42,12 @@ public class GameManager : MonoBehaviour
 
         spawner.SpawnObjects(
             currentLetter.correctObject,
-            currentLetter.wrongObjects
+            letters
         );
 
-        letterBox.SetCorrectObject(currentLetter.correctObject.name);
+        letterBox.SetCorrectItem(currentLetter.correctItemId);
+
+        Debug.Log("Текущая буква: " + currentLetter.letter + " | правильный ID: " + currentLetter.correctItemId);
     }
 
     public void CorrectAnswer()
@@ -43,16 +55,16 @@ public class GameManager : MonoBehaviour
         if (roundFinished) return;
 
         roundFinished = true;
-        Debug.Log("Correct!");
+        Debug.Log("Правильно!");
 
         currentIndex++;
-        Invoke(nameof(StartRound), 0.5f);
+        Invoke(nameof(StartRound), nextRoundDelay);
     }
 
     public void WrongAnswer()
     {
         if (roundFinished) return;
 
-        Debug.Log("Wrong!");
+        Debug.Log("Неправильно! Буква остаётся прежней.");
     }
 }
