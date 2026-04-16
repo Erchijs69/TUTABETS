@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
 
     public float nextRoundDelay = 0.7f;
 
+    public AudioSource audioSource;
+    public AudioClip wrongSound;
+    
     private int currentIndex = 0;
     private bool roundFinished = false;
     private LetterData currentLetter;
@@ -65,6 +68,11 @@ public class GameManager : MonoBehaviour
     {
         if (roundFinished) return;
 
-        Debug.Log("Неправильно! Буква остаётся прежней.");
+        //play sound!
+        if (audioSource != null && wrongSound != null)
+
+            audioSource.PlayOneShot(wrongSound);
+
+        Debug.Log("Nepareizi!");
     }
 }
